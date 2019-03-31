@@ -14,4 +14,7 @@ Please review all information's listed below
   > Git Repository: $git
   $cloneAtReview
 ";
-  echo NEW_LINE;
+echo NEW_LINE;
+
+echo "Continue? (y/n): ";
+if( input() !== 'y') exit( "Action was cancelled." );
