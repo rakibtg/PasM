@@ -19,6 +19,11 @@
   // Create document root directories.
   $command .= 'mkdir -p ' . $documentRoot . '; ';
 
+  // Update permission.
+  if( $updatePermission === 'Yes' ) {
+    $command .= 'sudo chown -R www-data: /var/www/' . $domainWithoutWWW . '/';
+  }
+
   // Clone from git.
   if( $git !== 'No' ) {
     $command .= 'cd ' . $cloneAt . '; ';
